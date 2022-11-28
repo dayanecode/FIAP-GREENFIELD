@@ -9,7 +9,7 @@ import { TextThree} from "../Text/TextThree";
 const Wrapper = styled.footer`
     width: 100%;
     padding: 1vh 0;
-    background-color: ${Colors.BEGE_ESCURO_GREENFIELD};
+    background-color: ${Colors.ROSA_GREENFIELD};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,12 +72,12 @@ export function Footer(){
 
                 <DivTeam>
 
-                    <Logo/>
                     
                     <Team>
                         <TextThree>Greenfield</TextThree>
                         <TextTwo>FIAP | 2TINOR-2022</TextTwo>
-                        <ParagraphOne>SISTEMAS PARA INTERNET</ParagraphOne>
+                        <ParagraphOne>Sistemas Para Internet</ParagraphOne>
+                        <ParagraphOne>GRUPO - X</ParagraphOne>
                     </Team>   
 
                     <Team>
