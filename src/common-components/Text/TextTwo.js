@@ -6,7 +6,7 @@ export const TextTwo = styled.span`
     font-weight: ${FontWeights.ULTRA_BOLD};
     font-size: ${FontSizes.TWO};
     color: ${Colors.NEUTRAL_BLACK};
-    margin-top: ${Spaces.TEN};
+    margin-top: ${Spaces.ONE};
     margin-right: ${Spaces.TEN};
 `;
 

@@ -7,6 +7,39 @@ export function Ranking() {
         <>
         <div>
             <Header />
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>           
+           <div>Ranking!</div>
+
             <Footer />          
         </div>
 

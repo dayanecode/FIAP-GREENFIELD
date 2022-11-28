@@ -3,6 +3,8 @@ import { Colors } from "../../shared/DesignTokens";
 import logoGitHub from "../../assets/icons/github-logo.svg"
 import { ParagraphOne } from "../Paragraph/ParagraphOne";
 import { TextTwo } from "../Text/TextTwo.js"
+import logo from "../../assets/images/logo.png";
+import { TextThree} from "../Text/TextThree";
 
 const Wrapper = styled.footer`
     width: 100%;
@@ -28,7 +30,18 @@ const Team = styled.div`
     justify-content: space-evenly;
 `;
 
-const GitHub = styled.img.attrs({
+const Logo = styled.img.attrs({
+    src: logo,
+    alt: 'Logotipo Greenfield'
+})  `
+height: 10vh;
+margin: 1 1vw 0 0;  
+margin-top: 10px;
+margin-botton: 10px;
+`;
+
+
+const IconGitHub = styled.img.attrs({
     src: logoGitHub,
     alt: 'Logotipo GitHub'
 }) `
@@ -44,18 +57,41 @@ const DivGit = styled.div`
     align-items: center;
 `;
 
+const Link = styled.a`
+    color: ${Colors.LARANJA_GREENFIELD};
+    text-decoration: none;
+
+`;
+
+
 
 export function Footer(){
     return (
         <>
-            <Wrapper>
+            <Wrapper>         
+
                 <DivTeam>
+
+                    <Logo/>
+                    
+                    <Team>
+                        <TextThree>Greenfield</TextThree>
+                        <TextTwo>FIAP | 2TINOR-2022</TextTwo>
+                        <ParagraphOne>SISTEMAS PARA INTERNET</ParagraphOne>
+                    </Team>   
+
                     <Team>
                         <TextTwo>Dayane Ramos do Nascimento</TextTwo>
                         <ParagraphOne>RM 92632</ParagraphOne>
                         <DivGit>
-                        <GitHub />
-                            <ParagraphOne>dayanecode</ParagraphOne>
+                        <IconGitHub />
+                            <ParagraphOne>
+                                <Link href='https://github.com/dayanecode'
+                                target="_blank"
+                                >
+                                    dayanecode
+                                </Link>
+                            </ParagraphOne>
                         </DivGit>
                     </Team>
                     
@@ -64,8 +100,15 @@ export function Footer(){
                     <TextTwo>Gabriel Dovnorovzki Rodrigues</TextTwo>
                         <ParagraphOne>RM 92399</ParagraphOne>
                         <DivGit>
-                        <GitHub />
-                            <ParagraphOne>gabsdovz</ParagraphOne>
+                        <IconGitHub />
+                            <ParagraphOne>
+                                <Link
+                                className="App-link" 
+                                href='https://github.com/gabsdovz' 
+                                target="_blank">
+                                    gabsdovz 
+                                </Link>
+                            </ParagraphOne>
                         </DivGit>
                     </Team>
 
@@ -74,9 +117,13 @@ export function Footer(){
                     <TextTwo>Henrique Fernandez Soares</TextTwo>
                         <ParagraphOne>RM 92489</ParagraphOne>
                         <DivGit>
-                        <GitHub />
+                        <IconGitHub />
                             <ParagraphOne>
-                                <a href='https://github.com/dayanecode'>RickFernandez</a>
+                                <Link href='https://github.com/RickFernandez'
+                                target="_blank"
+                                >
+                                    RickFernandez
+                                </Link>
                             </ParagraphOne>
                         </DivGit>
                     </Team>
