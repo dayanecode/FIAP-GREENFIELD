@@ -1,95 +1,132 @@
 import styled from "styled-components";
 import { Colors } from "../../shared/DesignTokens";
-import logo from "../../assets/images/logo.png";
-import iconHome from "../../assets/icons/house-solid.svg";
-import iconRanking from "../../assets/icons/ranking-star-solid.svg";
-import iconMission from "../../assets/icons/magnifying-glass-solid.svg";
-import iconTreasure from "../../assets/icons/gem-solid.svg";
-import iconPerfil from "../../assets/icons/user-secret-solid.svg";
+import logo from "../../assets/images/logo-branco.png";
+import { TextMenu } from "../Text/TextMenu";
+// Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+// Font Awesome 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+
+
+const MenuItem = styled.a`
+    color: ${Colors.ROSA_GREENFIELD};
+    font-size: 3rem;
+    text-decoration: none;    
+`;
 
 const Logo = styled.img.attrs({
     src: logo,
     alt: 'Logotipo Greenfield'
 }) `
-    height: 10vh;
-    margin: 0 1vw 0 0;
-    margin-right: 300px;
+    height: 14vh;
 `;
-
-const IconHome = styled.img.attrs({
-    src: iconHome,
-    alt: 'Ícone da página Home'
-})
-`
-    height: 10vh;
-    margin: 0 1vw 0 0;
-    margin-right: 100px;
-    // filter: invert(87 % ) sepia(6 % ) saturate(1938 % ) hue - rotate(352 deg) brightness(103 % ) contrast(87 % );
-`;
-
-const IconRanking = styled.img.attrs({
-    src: iconRanking,
-    alt: 'Ícone da página de ranking'    
-})
-`
-    height: 10vh;
-    margin: 0 1vw 0 0;
-    margin-right: 100px;
-`;
-
-const IconMission = styled.img.attrs({
-    src: iconMission,
-    alt: 'Ícone da página de missões'
-})
-`
-    height: 10vh;
-    margin: 0 1vw 0 0;
-    margin-right: 100px;
-`;
-
-const IconTreasure = styled.img.attrs({
-    src: iconTreasure,
-    alt: 'Ícone da página de tesouros'
-})
-`
-    height: 10vh;
-    margin: 0 1vw 0 0;
-    margin-right: 100px;
-`;
-
-const IconPerfil = styled.img.attrs({
-    src: iconPerfil,
-    alt: 'Ícone da página de perfil'
-})
-`
-    height: 10vh;
-    margin: 0 1vw 0 0;
-    margin-right: 100px;
-`;
-
 
 const Wrapper = styled.header `
-    width: 100%;
+    width: 100vw;
     height: 15vh;
     display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 0 2vw 0 2vw;
+    justify-content: space-evenly;
+    align-items: center; //define o linhamento vertical
     background-color: ${Colors.LARANJA_GREENFIELD};
+    
 `;
 
+const DivLogo = styled.div `
+    width: 10% ;
+    align-items: center;
+    // background-color: ${Colors.ROSA_GREENFIELD};
+    display: flex;
+    justify-content: center;
+    
+`;
+
+const DivMenu = styled.div`
+    width: 90% ;
+    align-items: center;    
+    display: flex;
+    justify-content: space-around;
+`;
+
+const DivMenuItem = styled.div`
+    width: 100%;   
+    align-items: center; //define o linhamento vertical
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 10px 0px;    
+`;
 
 export function Header() {
     return (
         <>
             <Wrapper>
-                <Logo />     
-                <IconHome />                
-                <IconRanking />                
-                <IconMission />                
-                <IconTreasure />                
-                <IconPerfil />         
+                <DivLogo>
+                    <Logo />                                 
+                </DivLogo>          
+
+            
+
+                <DivMenu>
+                        <DivMenuItem>
+                            <MenuItem>
+                                <FontAwesomeIcon icon = {faFacebook} />
+                            </MenuItem>
+                            <TextMenu
+                                href = './'
+                                alt ='Icone do Menu'> HOME
+                            </TextMenu> 
+                        </DivMenuItem>
+
+
+                         <DivMenuItem>
+                            <MenuItem>
+                                <FontAwesomeIcon icon = {faFacebook} />
+                            </MenuItem>
+                            <TextMenu
+                                href = './ranking'
+                                alt ='Icone do Menu'> RANKING
+                            </TextMenu> 
+                        </DivMenuItem>
+
+
+                           <DivMenuItem>
+                            <MenuItem>
+                                <FontAwesomeIcon icon = {faFacebook} />
+                            </MenuItem>
+                            <TextMenu
+                                href = './'
+                                alt ='Icone do Menu'> MISSIONS
+                            </TextMenu> 
+                        </DivMenuItem>
+
+
+                           <DivMenuItem>
+                            <MenuItem>
+                                <FontAwesomeIcon icon = {faFacebook} />
+                            </MenuItem>
+                            <TextMenu
+                                href = './ranking'
+                                alt ='Icone do Menu'> TREASURES
+                            </TextMenu> 
+                        </DivMenuItem>
+
+                          <DivMenuItem>
+                            <MenuItem>
+                                <FontAwesomeIcon icon = {faFacebook} />
+                            </MenuItem>
+                            <TextMenu
+                                href = './ranking'
+                                alt ='Icone do Menu'> PROFILE
+                            </TextMenu> 
+                        </DivMenuItem>
+
+
+
+                </DivMenu>  
             </Wrapper>
+
+          
         </>
     );
 }

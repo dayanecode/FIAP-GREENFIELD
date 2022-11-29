@@ -1,43 +1,28 @@
 import styled from "styled-components";
 import { Colors } from "../../shared/DesignTokens";
-import logoGitHub from "../../assets/icons/github-logo.svg"
+import logoGitHub from "../../assets/icons/github-logo.svg";
 import { ParagraphOne } from "../Paragraph/ParagraphOne";
-import { TextTwo } from "../Text/TextTwo.js"
-import logo from "../../assets/images/logo.png";
+import { TextTwo } from "../Text/TextTwo.js";
 import { TextThree} from "../Text/TextThree";
 
 const Wrapper = styled.footer`
-    width: 100%;
-    padding: 1vh 0;
+    width: 100vw;
     background-color: ${Colors.ROSA_GREENFIELD};
     display: flex;
     flex-direction: column;
-    align-items: center;
 `;
 
 const DivTeam = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 100vw;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly;    
 `;
 
 const Team = styled.div`
     width: 20%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-`;
-
-const Logo = styled.img.attrs({
-    src: logo,
-    alt: 'Logotipo Greenfield'
-})  `
-height: 10vh;
-margin: 1 1vw 0 0;  
-margin-top: 10px;
-margin-botton: 10px;
+    flex-direction: column;    
 `;
 
 
@@ -60,7 +45,6 @@ const DivGit = styled.div`
 const Link = styled.a`
     color: ${Colors.LARANJA_GREENFIELD};
     text-decoration: none;
-
 `;
 
 
