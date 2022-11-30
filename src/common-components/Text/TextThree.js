@@ -5,5 +5,5 @@ export const TextThree = styled.span`
     font-family: ${FontFamilies.PRIMARY};
     font-weight: ${FontWeights.ULTRA_BOLD};
     font-size: ${FontSizes.THREE};
-    color: ${Colors.NEUTRAL_BLACK};
+    color: ${Colors.LARANJA_GREENFIELD};
 `;

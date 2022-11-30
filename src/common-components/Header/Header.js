@@ -4,23 +4,15 @@ import logo from "../../assets/images/logo-branco.png";
 import { TextMenu } from "../Text/TextMenu";
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
-// Font Awesome 
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-
-
-const MenuItem = styled.a`
-    color: ${Colors.ROSA_GREENFIELD};
-    font-size: 3rem;
-    text-decoration: none;    
-`;
+import { faHatWizard, faHouse, faMagnifyingGlass, faRankingStar, faToolbox } from '@fortawesome/free-solid-svg-icons'
 
 const Logo = styled.img.attrs({
     src: logo,
     alt: 'Logotipo Greenfield'
 }) `
-    height: 14vh;
+    height: 12vh;
 `;
 
 const Wrapper = styled.header `
@@ -36,7 +28,6 @@ const Wrapper = styled.header `
 const DivLogo = styled.div `
     width: 10% ;
     align-items: center;
-    // background-color: ${Colors.ROSA_GREENFIELD};
     display: flex;
     justify-content: center;
     
@@ -50,27 +41,36 @@ const DivMenu = styled.div`
 `;
 
 const DivMenuItem = styled.div`
-    width: 100%;   
+    width: auto;   
     align-items: center; //define o linhamento vertical
     display: flex;
-    flex-direction: column;
-    margin: 0px 0px 10px 0px;    
+    flex-direction: column;   
+`;
+
+const MenuItem = styled.a `
+    color: ${Colors.ROSA_GREENFIELD};
+    font-size: 3rem;
+    text-decoration: none;
+    &amp;:hover {
+	color: ${Colors.BEGE_ESCURO_GREENFIELD};
+	}    
 `;
 
 export function Header() {
+
     return (
         <>
             <Wrapper>
                 <DivLogo>
                     <Logo />                                 
-                </DivLogo>          
-
-            
+                </DivLogo>        
+           
 
                 <DivMenu>
-                        <DivMenuItem>
+                        <DivMenuItem >
                             <MenuItem>
-                                <FontAwesomeIcon icon = {faFacebook} />
+                                <FontAwesomeIcon                                 
+                                 icon = {faHouse} />
                             </MenuItem>
                             <TextMenu
                                 href = './'
@@ -79,11 +79,11 @@ export function Header() {
                         </DivMenuItem>
 
 
-                         <DivMenuItem>
+                         <DivMenuItem  >
                             <MenuItem>
-                                <FontAwesomeIcon icon = {faFacebook} />
+                                <FontAwesomeIcon icon = {faRankingStar} />
                             </MenuItem>
-                            <TextMenu
+                            <TextMenu                                
                                 href = './ranking'
                                 alt ='Icone do Menu'> RANKING
                             </TextMenu> 
@@ -92,7 +92,7 @@ export function Header() {
 
                            <DivMenuItem>
                             <MenuItem>
-                                <FontAwesomeIcon icon = {faFacebook} />
+                                <FontAwesomeIcon icon = {faMagnifyingGlass} />
                             </MenuItem>
                             <TextMenu
                                 href = './'
@@ -103,27 +103,24 @@ export function Header() {
 
                            <DivMenuItem>
                             <MenuItem>
-                                <FontAwesomeIcon icon = {faFacebook} />
+                                <FontAwesomeIcon icon = {faToolbox} />
                             </MenuItem>
                             <TextMenu
-                                href = './ranking'
+                                href = './'
                                 alt ='Icone do Menu'> TREASURES
                             </TextMenu> 
                         </DivMenuItem>
 
                           <DivMenuItem>
                             <MenuItem>
-                                <FontAwesomeIcon icon = {faFacebook} />
+                                <FontAwesomeIcon icon={faHatWizard} />
                             </MenuItem>
                             <TextMenu
-                                href = './ranking'
+                                href = './'
                                 alt ='Icone do Menu'> PROFILE
                             </TextMenu> 
                         </DivMenuItem>
-
-
-
-                </DivMenu>  
+                    </DivMenu>  
             </Wrapper>
 
           

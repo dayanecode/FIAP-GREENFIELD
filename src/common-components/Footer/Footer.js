@@ -54,15 +54,13 @@ export function Footer(){
         <>
             <Wrapper>         
 
-                <DivTeam>
-
-                    
+                <DivTeam>                    
                     <Team>
-                        <TextThree>Greenfield</TextThree>
+                        <TextThree>GREENFIELD</TextThree>
                         <TextTwo>FIAP | 2TINOR-2022</TextTwo>
                         <ParagraphOne>Sistemas Para Internet</ParagraphOne>
                         <ParagraphOne>GRUPO - X</ParagraphOne>
-                    </Team>   
+                    </Team>
 
                     <Team>
                         <TextTwo>Dayane Ramos do Nascimento</TextTwo>
