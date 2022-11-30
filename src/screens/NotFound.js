@@ -4,7 +4,7 @@ import { Colors } from '../shared/DesignTokens';
 import { Header } from "../common-components/Header/Header";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons'
-import { CardRanking } from '../common-components/Card/CardRanking';
+import { CardColumn } from '../common-components/Card/CardColumn';
 
 
 const BugItem = styled.span `
@@ -15,20 +15,29 @@ const BugItem = styled.span `
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    align-content: center; 
-   
+    align-content: center;    
+`;
+
+const TextNotFound = styled.div `
+    font-size: 2rem;
+    font-weight: bold;
+    color: ${Colors.LARANJA_GREENFIELD};
+    display:flex;
+    position: absolut;    
 `;
 
 export function NotFound() {
     return (
         <>
         <Header /> 
-        <CardRanking>
+        <CardColumn>
             <BugItem>
                 <FontAwesomeIcon icon={faScrewdriverWrench} />            
-            </BugItem>
-        <div>Página em construção!</div>
-        </CardRanking>      
+            </BugItem>                              
+            <TextNotFound>Página em construção!</TextNotFound>
+        </CardColumn>
+
+           
         </>
     );
 }

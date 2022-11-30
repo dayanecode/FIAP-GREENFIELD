@@ -10,6 +10,10 @@ import {
 } from '../../shared/DesignTokens';
 
 export const Button = styled.button`
+	
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 	border: none;
 	outline: none;
 	width: 25%;
@@ -28,6 +32,8 @@ export const Button = styled.button`
     letter-spacing: ${FontLetterSpacings.MEDIUM}; 
 
 	&amp;:hover {
+		color: ${Colors.BEGE_ESCURO_GREENFIELD};
 		background-color: ${Colors.ROSA_GREENFIELD};
+		
 	}
 `;

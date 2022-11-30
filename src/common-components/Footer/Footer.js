@@ -45,6 +45,9 @@ const DivGit = styled.div`
 const Link = styled.a`
     color: ${Colors.LARANJA_GREENFIELD};
     text-decoration: none;
+    &amp;:hover {
+		color: ${Colors.BEGE_ESCURO_GREENFIELD};
+	}
 `;
 
 
