@@ -7,7 +7,7 @@ import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons'
 import { CardColumn } from '../common-components/Card/CardColumn';
 
 
-const BugItem = styled.span `
+const BugIcon = styled.span `
     height: 80vh;  
     color: ${Colors.ROSA_GREENFIELD};    
     font-size: 20rem;    
@@ -15,12 +15,12 @@ const BugItem = styled.span `
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    align-content: center;    
+    align-content: center;        
 `;
 
 const TextNotFound = styled.div `
     font-size: 2rem;
-    font-weight: bold;
+    // font-weight: bold;
     color: ${Colors.LARANJA_GREENFIELD};
     display:flex;
     position: absolut;    
@@ -31,12 +31,11 @@ export function NotFound() {
         <>
         <Header /> 
         <CardColumn>
-            <BugItem>
+            <BugIcon >
                 <FontAwesomeIcon icon={faScrewdriverWrench} />            
-            </BugItem>                              
+            </BugIcon>                              
             <TextNotFound>Página em construção!</TextNotFound>
         </CardColumn>
-
            
         </>
     );

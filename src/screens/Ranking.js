@@ -94,7 +94,8 @@ export function Ranking() {
                         <UserAvatar src = {require('../assets/images/na1.png')}/>
                         <TextUser>User_007</TextUser>
                         <Score>12 points</Score>                   
-                    </CardRankingPosition> 
+                    </CardRankingPosition>
+                     
                 </CardColumn>                
             </Wrapper>
             <Footer/>                  
