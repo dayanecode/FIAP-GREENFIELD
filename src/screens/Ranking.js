@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Colors, Shadows } from "../shared/DesignTokens";
 import { Header } from "../common-components/Header/Header";
@@ -8,8 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CardRankingPosition } from "../common-components/Card/CardRankingPosition";
 import { CardRow } from "../common-components/Card/CardRow";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
-
-
 
 const Wrapper = styled.header `
     width: 100vw;   
@@ -40,7 +39,7 @@ const UserAvatar = styled.div `
 
 const TextUser = styled.span `
     font-size: 2rem;
-    font-weight: bold;
+    // font-weight: bold;
     color: ${Colors.LARANJA_GREENFIELD};
     text-shadow: -1px 1px ${Colors.LARANJA_GREENFIELD};      
 `;
@@ -54,11 +53,25 @@ const Score = styled.span `
 
 
 export function Ranking() {
+
+const [posts, setPosts] = useState([]);
+
+useEffect(() => fetchPosts(), []);
+
+
+function fetchPosts() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        data.length = 4;
+        setPosts(data);
+      });
+  }
+
     return (
         <>      
             <Header />
             <Wrapper>
-
                 <CardRow>               
                     <TextPoints>28</TextPoints>
                     <Button>
@@ -67,36 +80,26 @@ export function Ranking() {
                     </Button>
                 </CardRow>
             
-                <CardColumn>
+                <CardColumn>                                 
                     <CardRankingPosition>
-                        <TextUser>1º</TextUser>                       
-                        <UserAvatar src = {require('../assets/images/na1.png')}/>
-                        <TextUser>User_010</TextUser>
-                        <Score>99 points</Score>                   
-                    </CardRankingPosition> 
-
-                    <CardRankingPosition>
-                        <TextUser>2º</TextUser>                       
-                        <UserAvatar src = {require('../assets/images/na1.png')}/>
-                        <TextUser>User_099</TextUser>
-                        <Score>35 points</Score>                   
-                    </CardRankingPosition> 
-                    
-                   <CardRankingPosition>
-                        <TextUser>3º</TextUser>                       
-                        <UserAvatar src = {require('../assets/images/na1.png')}/>
-                        <TextUser>User_149</TextUser>
-                        <Score>23 points</Score>                   
-                    </CardRankingPosition> 
-                    
-                    <CardRankingPosition>
-                        <TextUser>4º</TextUser>                       
-                        <UserAvatar src = {require('../assets/images/na1.png')}/>
-                        <TextUser>User_007</TextUser>
-                        <Score>12 points</Score>                   
+                        <TextUser>Ranking</TextUser>
+                        <TextUser>Avatar</TextUser>
+                        <TextUser>User</TextUser>
                     </CardRankingPosition>
-                     
-                </CardColumn>                
+
+                    {posts.map((post) =>(                      
+                            <CardRankingPosition>
+                                
+                                <TextUser>{post.id}º</TextUser>
+                                <UserAvatar
+                                src={`https://avatars.dicebear.com/api/avataaars/${4 * post.id}/.svg`}
+                                alt="imagem Avatar"
+                                />
+                                <TextUser>User_00{post.id * 2}</TextUser>
+                           </CardRankingPosition>                       
+                    ))}
+
+                </CardColumn>
             </Wrapper>
             <Footer/>                  
 
