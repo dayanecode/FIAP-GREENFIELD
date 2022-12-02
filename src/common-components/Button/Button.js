@@ -3,7 +3,6 @@ import {
 	BorderRadiuses,
 	Colors,
 	Shadows,
-	Spaces,
 	FontLetterSpacings,
 	FontFamilies,
 	FontWeights,
@@ -12,11 +11,11 @@ import {
 export const Button = styled.button`
 	
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	border: none;
 	outline: none;
-	width: 25%;
+	width: 30%;
 	height: 40px;
 	font-family: ${FontFamilies.PRIMARY};
 	font-weight: ${FontWeights.BOLD};
@@ -25,11 +24,10 @@ export const Button = styled.button`
 	color: ${Colors.NEUTRAL_WHITE};
 	box-shadow: ${Shadows.ONE};
 	border-radius: ${BorderRadiuses.ONE};
-	padding: ${Spaces.ONE} ${Spaces.TWO};
 	cursor: pointer;
 	transition: 200ms all ease;
 	text-transform: uppercase;
-    letter-spacing: ${FontLetterSpacings.MEDIUM}; 
+    letter-spacing: ${FontLetterSpacings.LARGE}; 
 
 	&amp;:hover {
 		color: ${Colors.BEGE_ESCURO_GREENFIELD};

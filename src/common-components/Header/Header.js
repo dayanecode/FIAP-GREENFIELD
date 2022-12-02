@@ -44,7 +44,7 @@ const DivMenuItem = styled.div`
     width: auto;   
     align-items: center; //define o linhamento vertical
     display: flex;
-    flex-direction: column;   
+    flex-direction: column; 
 `;
 
 const MenuItem = styled.a `
@@ -95,7 +95,7 @@ export function Header() {
                                 <FontAwesomeIcon icon = {faMagnifyingGlass} />
                             </MenuItem>
                             <TextMenu
-                                href = './'
+                                href = './mission'
                                 alt ='Icone do Menu'> MISSIONS
                             </TextMenu> 
                         </DivMenuItem>
@@ -106,7 +106,7 @@ export function Header() {
                                 <FontAwesomeIcon icon = {faToolbox} />
                             </MenuItem>
                             <TextMenu
-                                href = './'
+                                href = './treasure'
                                 alt ='Icone do Menu'> TREASURES
                             </TextMenu> 
                         </DivMenuItem>
@@ -116,7 +116,7 @@ export function Header() {
                                 <FontAwesomeIcon icon={faHatWizard} />
                             </MenuItem>
                             <TextMenu
-                                href = './'
+                                href = './profile'
                                 alt ='Icone do Menu'> PROFILE
                             </TextMenu> 
                         </DivMenuItem>

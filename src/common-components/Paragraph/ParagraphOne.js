@@ -6,4 +6,5 @@ export const ParagraphOne = styled.span`
     font-weight: ${FontWeights.REGULAR};
     font-size: ${FontSizes.TWO};
     color: ${Colors.NEUTRAL_BLACK};
+    
 `;

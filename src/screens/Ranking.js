@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Colors, Shadows } from "../shared/DesignTokens";
+import { Colors, Shadows, FontWeights } from "../shared/DesignTokens";
 import { Header } from "../common-components/Header/Header";
 import { Footer } from "../common-components/Footer/Footer"
 import { CardColumn} from "../common-components/Card/CardColumn"
 import { Button } from "../common-components/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CardRankingPosition } from "../common-components/Card/CardRankingPosition";
-import { CardRow } from "../common-components/Card/CardRow";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import { CardPoints } from "../common-components/Card/CardPoints";
 
 const Wrapper = styled.header `
     width: 100vw;   
@@ -17,11 +17,43 @@ const Wrapper = styled.header `
     align-items: center;    
 `;
 
-const TextPoints = styled.span`
-    font-size: 20rem;
-    font-weight: bold;
-    text-shadow: -10px -10px ${Colors.LARANJA_GREENFIELD};
-    color: ${Colors.AZUL_GREENFIELD};   
+const TextScore = styled.text`
+    font-size: 3rem;
+    font-weight: ${FontWeights.BOLD};
+    color: ${Colors.NEUTRAL_WHITE};
+    text-shadow: -1px 2px ${Colors.LARANJA_GREENFIELD};   
+`;
+
+const TextPoints = styled.text`
+    font-size: 250px;
+    font-weight: ${FontWeights.BOLD};
+    text-shadow: -8px -8px ${Colors.LARANJA_GREENFIELD};
+    color: ${Colors.AZUL_GREENFIELD};
+    padding: 0px 0px 20px 20px;
+
+`;
+
+const TextAlert = styled.text`
+    font-size: 20px;
+    color: ${Colors.LARANJA_GREENFIELD};
+    font-weight: ${FontWeights.BOLD};  
+    text-shadow: 1px -1px ${Colors.ROSA_GREENFIELD}; 
+
+`;
+
+const HeaderRanking = styled.div`   
+    width: 500px;
+    font-weight: ${FontWeights.BOLD};
+    color: ${Colors.LARANJA_GREENFIELD};
+    background: ${Colors.BEGE_CLARO_GREENFIELD};
+    border: 1px solid ${Colors.LARANJA_GREENFIELD};	
+    display: flex;
+    justify-content: space-around;
+`
+const TextHeaderRanking = styled.text`
+    font-size: 2rem;
+    font-weight: ${FontWeights.BOLD};
+    color: ${Colors.LARANJA_GREENFIELD};   
 `;
 
 const UserAvatar = styled.div `
@@ -37,26 +69,29 @@ const UserAvatar = styled.div `
 	background-position: center;
 `;
 
-const TextUser = styled.span `
+const TextUser = styled.section`
     font-size: 2rem;
-    // font-weight: bold;
+    font-weight: ${FontWeights.BOLD};
     color: ${Colors.LARANJA_GREENFIELD};
     text-shadow: -1px 1px ${Colors.LARANJA_GREENFIELD};      
 `;
 
-const Score = styled.span `
+const TextPointsRanking = styled.text`
     font-size: 2rem;
-    font-weight: bold;
-    color: ${Colors.AZUL_GREENFIELD};
-    text-shadow: -1px 1px ${Colors.LARANJA_GREENFIELD};   
+    font-weight: ${FontWeights.BOLD};
+    text-shadow: -1px -1px ${Colors.LARANJA_GREENFIELD};
+    color: ${Colors.AZUL_GREENFIELD};   
 `;
 
 
 export function Ranking() {
 
 const [posts, setPosts] = useState([]);
+const points = [500,400,300,200];
 
 useEffect(() => fetchPosts(), []);
+
+
 
 
 function fetchPosts() {
@@ -72,36 +107,46 @@ function fetchPosts() {
         <>      
             <Header />
             <Wrapper>
-                <CardRow>               
+
+                <CardColumn>
+                    <TextScore>Your Points</TextScore> 
+                <CardPoints>
                     <TextPoints>28</TextPoints>
-                    <Button>
+                </CardPoints>
+                    <TextAlert>
+                        Keep completing more missions to increase your score even more!
+                    </TextAlert>
+                    <Button> 
                         SHARE
                         <FontAwesomeIcon className="fa-light" icon={faShareNodes} /> 
                     </Button>
-                </CardRow>
+                </CardColumn>
             
-                <CardColumn>                                 
-                    <CardRankingPosition>
-                        <TextUser>Ranking</TextUser>
-                        <TextUser>Avatar</TextUser>
-                        <TextUser>User</TextUser>
-                    </CardRankingPosition>
+                <CardColumn>        
+                    <TextAlert>THE TOP TWENTY ADVANCE TO THE NEXT LEVEL!</TextAlert>
+                    <HeaderRanking>
+                        <TextHeaderRanking>Position</TextHeaderRanking>
+                        <TextHeaderRanking>User</TextHeaderRanking>
+                        <TextHeaderRanking>Points</TextHeaderRanking>
+                    </HeaderRanking>
 
                     {posts.map((post) =>(                      
-                            <CardRankingPosition>
-                                
+                            <CardRankingPosition>                                
                                 <TextUser>{post.id}º</TextUser>
                                 <UserAvatar
-                                src={`https://avatars.dicebear.com/api/avataaars/${4 * post.id}/.svg`}
+                                src={`https://avatars.dicebear.com/api/avataaars/${4 * Math.random(post.id)}/.svg`}
                                 alt="imagem Avatar"
                                 />
-                                <TextUser>User_00{post.id * 2}</TextUser>
+                                <TextUser>User{Math.floor(Math.random(post.id)*100)}</TextUser>
+                                <TextPointsRanking>{points[0]-post.id*110}</TextPointsRanking>
                            </CardRankingPosition>                       
                     ))}
 
                 </CardColumn>
             </Wrapper>
-            <Footer/>                  
+
+            <Footer/>
+                              
 
         </>
     );
