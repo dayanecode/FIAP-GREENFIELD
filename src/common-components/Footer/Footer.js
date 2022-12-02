@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Colors } from "../../shared/DesignTokens";
-import logoGitHub from "../../assets/icons/github-logo.svg";
 import { ParagraphOne } from "../Paragraph/ParagraphOne";
 import { TextTwo } from "../Text/TextTwo.js";
 import { TextThree} from "../Text/TextThree";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Wrapper = styled.footer`
     width: 100vw;
@@ -25,16 +26,6 @@ const Team = styled.div`
     flex-direction: column;    
 `;
 
-
-const IconGitHub = styled.img.attrs({
-    src: logoGitHub,
-    alt: 'Logotipo GitHub'
-}) `
-    width: 2vw;
-    margin: 0 1vw 0 0;
-`;
-
-
 const DivGit = styled.div`
     width: 50%;
     display: flex;
@@ -46,7 +37,8 @@ const Link = styled.a`
     color: ${Colors.LARANJA_GREENFIELD};
     text-decoration: none;
     &amp;:hover {
-		color: ${Colors.BEGE_ESCURO_GREENFIELD};
+		color: ${Colors.LARANJA_GREENFIELD};
+        text-shadow: 1px 1px ${Colors.BEGE_CLARO_GREENFIELD}; ;
 	}
 `;
 
@@ -68,13 +60,13 @@ export function Footer(){
                     <Team>
                         <TextTwo>Dayane Ramos do Nascimento</TextTwo>
                         <ParagraphOne>RM 92632</ParagraphOne>
-                        <DivGit>
-                        <IconGitHub />
-                            <ParagraphOne>
+                        <DivGit>                       
+                            <ParagraphOne>                                
                                 <Link href='https://github.com/dayanecode'
-                                target="_blank"
+                                target="_blank"                                
                                 >
-                                    dayanecode
+                                    <FontAwesomeIcon icon={faGithub} />
+                                    .dayanecode
                                 </Link>
                             </ParagraphOne>
                         </DivGit>
@@ -84,14 +76,14 @@ export function Footer(){
                     <Team>
                     <TextTwo>Gabriel Dovnorovzki Rodrigues</TextTwo>
                         <ParagraphOne>RM 92399</ParagraphOne>
-                        <DivGit>
-                        <IconGitHub />
+                        <DivGit>                   
                             <ParagraphOne>
                                 <Link
                                 className="App-link" 
                                 href='https://github.com/gabsdovz' 
                                 target="_blank">
-                                    gabsdovz 
+                                    <FontAwesomeIcon icon={faGithub} />
+                                    .gabsdovz 
                                 </Link>
                             </ParagraphOne>
                         </DivGit>
@@ -101,13 +93,13 @@ export function Footer(){
                     <Team>
                     <TextTwo>Henrique Fernandez Soares</TextTwo>
                         <ParagraphOne>RM 92489</ParagraphOne>
-                        <DivGit>
-                        <IconGitHub />
+                        <DivGit>                     
                             <ParagraphOne>
                                 <Link href='https://github.com/RickFernandez'
                                 target="_blank"
-                                >
-                                    RickFernandez
+                                > 
+                                 <FontAwesomeIcon icon={faGithub} />
+                                     .RickFernandez
                                 </Link>
                             </ParagraphOne>
                         </DivGit>
