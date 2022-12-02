@@ -5,7 +5,8 @@ import { Header } from "../common-components/Header/Header";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons'
 import { CardColumn } from '../common-components/Card/CardColumn';
-import { Footer } from "../common-components/Footer/Footer"
+import { Footer } from "../common-components/Footer/Footer";
+import '../App.css';
 
 
 const BugIcon = styled.span `
@@ -16,15 +17,15 @@ const BugIcon = styled.span `
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    align-content: center;        
+    align-content: center;
+}
+
 `;
 
 const TextNotFound = styled.div `
     font-size: 2rem;
-    // font-weight: bold;
     color: ${Colors.LARANJA_GREENFIELD};
     display:flex;
-    position: absolut;    
 `;
 
 export function NotFound() {
@@ -32,13 +33,12 @@ export function NotFound() {
         <>
         <Header /> 
         <CardColumn>
-            <BugIcon >
+            < BugIcon className = 'App-logo' >
                 <FontAwesomeIcon icon={faScrewdriverWrench} />            
             </BugIcon>                              
             <TextNotFound>Página em construção!</TextNotFound>
         </CardColumn>
-        <Footer/>
-           
+        <Footer/>           
         </>
     );
 }
