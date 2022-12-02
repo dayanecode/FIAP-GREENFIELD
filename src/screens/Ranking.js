@@ -27,8 +27,8 @@ const TextScore = styled.text`
 const TextPoints = styled.text`
     font-size: 250px;
     font-weight: ${FontWeights.BOLD};
-    text-shadow: -8px -8px ${Colors.LARANJA_GREENFIELD};
     color: ${Colors.AZUL_GREENFIELD};
+    text-shadow: -8px -8px ${Colors.LARANJA_GREENFIELD};
     padding: 0px 0px 20px 20px;
 
 `;
@@ -36,8 +36,8 @@ const TextPoints = styled.text`
 const TextAlert = styled.text`
     font-size: 20px;
     color: ${Colors.LARANJA_GREENFIELD};
-    font-weight: ${FontWeights.BOLD};  
     text-shadow: 1px -1px ${Colors.ROSA_GREENFIELD}; 
+    font-weight: ${FontWeights.BOLD};  
 
 `;
 
@@ -123,7 +123,7 @@ function fetchPosts() {
                 </CardColumn>
             
                 <CardColumn>        
-                    <TextAlert>THE TOP TWENTY ADVANCE TO THE NEXT LEVEL!</TextAlert>
+                    <TextAlert>The top 20 advance to the next level!</TextAlert>
                     <HeaderRanking>
                         <TextHeaderRanking>Position</TextHeaderRanking>
                         <TextHeaderRanking>User</TextHeaderRanking>
@@ -137,7 +137,7 @@ function fetchPosts() {
                                 src={`https://avatars.dicebear.com/api/avataaars/${4 * Math.random(post.id)}/.svg`}
                                 alt="imagem Avatar"
                                 />
-                                <TextUser>User{Math.floor(Math.random(post.id)*100)}</TextUser>
+                                <TextUser>user{Math.floor(Math.random(post.id)*100)}</TextUser>
                                 <TextPointsRanking>{points[0]-post.id*110}</TextPointsRanking>
                            </CardRankingPosition>                       
                     ))}
