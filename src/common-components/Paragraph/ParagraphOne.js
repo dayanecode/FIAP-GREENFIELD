@@ -3,8 +3,7 @@ import { Colors, FontFamilies, FontSizes, FontWeights } from "../../shared/Desig
 
 export const ParagraphOne = styled.span`
     font-family: ${FontFamilies.PRIMARY};
-    font-weight: ${FontWeights.REGULAR};
+    // font-weight: ${FontWeights.THIN};
     font-size: ${FontSizes.TWO};
-    color: ${Colors.NEUTRAL_BLACK};
-    
+    color: ${Colors.LARANJA_GREENFIELD};    
 `;
