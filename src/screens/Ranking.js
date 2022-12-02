@@ -94,7 +94,7 @@ useEffect(() => fetchPosts(), []);
 
 
 function fetchPosts() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
       .then((data) => {
         data.length = 4;
@@ -138,7 +138,7 @@ function fetchPosts() {
                                 src={`https://avatars.dicebear.com/api/avataaars/${4 * Math.random(post.id)}/.svg`}
                                 alt="imagem Avatar"
                                 />
-                                <TextUser>user{Math.floor(Math.random(post.id)*100)}</TextUser>
+                                <TextUser>{(post.username)}</TextUser>
                                 <TextPointsRanking>{points[0]-post.id*110}</TextPointsRanking>
                            </CardRankingPosition>                       
                     ))}
