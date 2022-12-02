@@ -10,7 +10,7 @@ import { CardRankingPosition } from "../common-components/Card/CardRankingPositi
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import { CardPoints } from "../common-components/Card/CardPoints";
 
-const Wrapper = styled.header `
+const ContainerMain = styled.section`
     width: 100vw;   
     display: flex;
     justify-content: space-evenly;
@@ -87,10 +87,9 @@ const TextPointsRanking = styled.text`
 export function Ranking() {
 
 const [posts, setPosts] = useState([]);
-const points = [500,400,300,200];
+const points = [500];
 
 useEffect(() => fetchPosts(), []);
-
 
 
 
@@ -106,13 +105,15 @@ function fetchPosts() {
     return (
         <>      
             <Header />
-            <Wrapper>
+            <ContainerMain>
 
                 <CardColumn>
                     <TextScore>Your Points</TextScore> 
-                <CardPoints>
-                    <TextPoints>28</TextPoints>
-                </CardPoints>
+                    
+                        <CardPoints>                        
+                            <TextPoints>36</TextPoints>                        
+                        </CardPoints>
+                    
                     <TextAlert>
                         Keep completing more missions to increase your score even more!
                     </TextAlert>
@@ -143,7 +144,7 @@ function fetchPosts() {
                     ))}
 
                 </CardColumn>
-            </Wrapper>
+            </ContainerMain>
 
             <Footer/>
                               
