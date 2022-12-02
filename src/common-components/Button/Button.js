@@ -29,7 +29,7 @@ export const Button = styled.button`
 	text-transform: uppercase;
     letter-spacing: ${FontLetterSpacings.LARGE}; 
 
-	&amp;:hover {
+	&:hover {
 		color: ${Colors.BEGE_ESCURO_GREENFIELD};
 		background-color: ${Colors.ROSA_GREENFIELD};
 		

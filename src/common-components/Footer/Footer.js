@@ -38,7 +38,7 @@ const Link = styled.a`
     text-shadow: 1px 1px ${Colors.BEGE_CLARO_GREENFIELD}; ;
     font-weight: ${FontWeights.BOLD};
     text-decoration: none;
-    &amp;:hover {
+    &:hover {
 		color: ${Colors.NEUTRAL_WHITE};
         text-shadow: -1px 1px ${Colors.LARANJA_GREENFIELD};
 	}
