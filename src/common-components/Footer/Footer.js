@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { Colors } from "../../shared/DesignTokens";
+import { Colors, FontWeights } from "../../shared/DesignTokens";
 import { ParagraphOne } from "../Paragraph/ParagraphOne";
 import { TextTwo } from "../Text/TextTwo.js";
 import { TextThree} from "../Text/TextThree";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-const Wrapper = styled.footer`
+const ContainerFooter = styled.footer`
     width: 100vw;
     background-color: ${Colors.ROSA_GREENFIELD};
     display: flex;
@@ -35,19 +35,20 @@ const DivGit = styled.div`
 
 const Link = styled.a`
     color: ${Colors.LARANJA_GREENFIELD};
+    text-shadow: 1px 1px ${Colors.BEGE_CLARO_GREENFIELD}; ;
+    font-weight: ${FontWeights.BOLD};
     text-decoration: none;
     &amp;:hover {
-		color: ${Colors.LARANJA_GREENFIELD};
-        text-shadow: 1px 1px ${Colors.BEGE_CLARO_GREENFIELD}; ;
+		color: ${Colors.NEUTRAL_WHITE};
+        text-shadow: -1px 1px ${Colors.LARANJA_GREENFIELD};
 	}
 `;
-
 
 
 export function Footer(){
     return (
         <>
-            <Wrapper>         
+            <ContainerFooter>         
 
                 <DivTeam>                    
                     <Team>
@@ -106,7 +107,7 @@ export function Footer(){
                     </Team>
 
                 </DivTeam>
-            </Wrapper>
+            </ContainerFooter>
         </>
     );
 }
