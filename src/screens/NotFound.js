@@ -5,6 +5,7 @@ import { Header } from "../common-components/Header/Header";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons'
 import { CardColumn } from '../common-components/Card/CardColumn';
+import { Footer } from "../common-components/Footer/Footer"
 
 
 const BugIcon = styled.span `
@@ -36,6 +37,7 @@ export function NotFound() {
             </BugIcon>                              
             <TextNotFound>Página em construção!</TextNotFound>
         </CardColumn>
+        <Footer/>
            
         </>
     );
