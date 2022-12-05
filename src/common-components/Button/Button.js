@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import {
 	BorderRadiuses,
@@ -8,7 +9,7 @@ import {
 	FontWeights,
 } from '../../shared/DesignTokens';
 
-export const Button = styled.button`
+export const Button = styled(Link)`
 	
 	display: flex;
 	justify-content: center;
@@ -26,6 +27,7 @@ export const Button = styled.button`
 	border-radius: ${BorderRadiuses.ONE};
 	cursor: pointer;
 	transition: 200ms all ease;
+	text-decoration: none;
 	text-transform: uppercase;
     letter-spacing: ${FontLetterSpacings.LARGE}; 
 

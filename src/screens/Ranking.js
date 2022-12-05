@@ -117,7 +117,7 @@ function fetchPosts() {
                     <TextAlert>
                         Keep completing more missions to increase your score even more!
                     </TextAlert>
-                    <Button> 
+                    <Button to={`/sharepoints`}  > 
                         SHARE
                         <FontAwesomeIcon className="fa-light" icon={faShareNodes} /> 
                     </Button>
